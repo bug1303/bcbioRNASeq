@@ -212,7 +212,7 @@ An MA plot compares transformed counts on `M` (log ratio) and `A` (mean average)
 mapply(
     FUN = plotMA,
     object = res_list_shrunken,
-    MoreArgs = list(lfcThreshold = params$lfc),
+    MoreArgs = list(lfcThreshold = params$lfc_threshold),
     SIMPLIFY = FALSE
 )
 ```
@@ -225,7 +225,7 @@ A volcano plot compares significance (BH-adjusted *P* value) against fold change
 mapply(
     FUN = plotVolcano,
     object = res_list_shrunken,
-    MoreArgs = list(lfcThreshold = params$lfc),
+    MoreArgs = list(lfcThreshold = params$lfc_threshold),
     SIMPLIFY = FALSE
 )
 ```
@@ -275,7 +275,7 @@ res_tbl_list <- mapply(
     results = res_list_shrunken,
     MoreArgs = list(
         counts = dds,
-        lfcThreshold = params$lfc,
+        lfcThreshold = params$lfc_threshold,
         summary = TRUE,
         headerLevel = 2,
         write = TRUE,
@@ -294,7 +294,7 @@ Differentially expressed gene (DEG) tables are sorted by BH-adjusted P value, an
 - `log2FoldChange`: log2 fold change.
 - `lfcSE`: log2 standard error.
 - `stat`: Wald statistic.
-- `pvalue`: Walt test *P* value.
+- `pvalue`: Wald test *P* value.
 - `padj`: BH adjusted Wald test *P* value (corrected for multiple comparisons; aka FDR).
 
 ## Top tables
