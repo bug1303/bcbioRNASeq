@@ -238,6 +238,7 @@ mapply(
     FUN = plotDEGPCA,
     results = res_list_shrunken,
     MoreArgs = list(
+        lfcThreshold = params$lfc_threshold,
         counts = rld,
         label = TRUE
     ),
@@ -255,6 +256,7 @@ invisible(mapply(
     FUN = plotDEGHeatmap,
     results = res_list_shrunken,
     MoreArgs = list(
+        lfcThreshold = params$lfc_threshold,
         counts = rld,
         clusteringMethod = "ward.D2",
         scale = "row"
