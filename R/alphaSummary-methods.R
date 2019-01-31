@@ -68,7 +68,7 @@ setMethod(
             values <- vapply(
                 X = output,
                 FUN = function(x) {
-                    gsub("^.+\\:\\s(.+)\\s$", "\\1", x)
+                    x=gsub("^.+:\\s(.+)$", "\\1", x)
                 },
                 FUN.VALUE = "character"
             )
